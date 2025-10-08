@@ -160,18 +160,8 @@ Note: Needed for manage authentication and authorization for MCP servers.
 3. Click "Generate Questions"
 4. Answer the generated questions to test your knowledge
 
-### Showcase:
-
-<iframe 
-    width="560" 
-    height="315" 
-    src="https://www.youtube.com/embed/q3HwBHj-J78" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    referrerpolicy="strict-origin-when-cross-origin" 
-    allowfullscreen>
-</iframe>
+### Showcase: 
+- [Watch the Video](https://www.youtube.com/watch?v=q3HwBHj-J78)
 
 ## 🔧 Configuration
 
