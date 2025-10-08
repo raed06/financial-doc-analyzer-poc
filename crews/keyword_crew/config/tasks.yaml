@@ -1,0 +1,6 @@
+extract_keywords:
+  description: >
+    Extract 3 keywords from the provided answer: {answer}.
+  expected_output: >
+    A list of 3 keywords, comma-separated.
+  agent: keyword_extractor

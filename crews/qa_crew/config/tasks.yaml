@@ -1,0 +1,11 @@
+answer_financial_question:
+  description: >
+    Answer the following question using the provided context:
+
+    Question: {question}
+
+    Context: {context}
+
+    Provide a comprehensive answer based on the context.
+  expected_output: A clear, accurate answer to the question based on the provided context.
+  agent: financial_qa_specialist

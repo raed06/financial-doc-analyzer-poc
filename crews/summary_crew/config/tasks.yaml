@@ -1,0 +1,19 @@
+generate_summary:
+  description: >
+    You are given the following financial document(s):
+
+    {full_text}
+
+    Instructions:
+    {instructions}
+
+    Your task is to create a {summary_type} summary that includes:
+
+    - Key financial metrics (e.g., revenue, profit, growth rates)
+    - Trends or patterns (e.g., year-over-year changes, emerging issues)
+    - Strategic insights (e.g., business goals, challenges, market focus)
+
+    The summary should be clear, concise, and informative for stakeholders without requiring them to read the full document.
+  expected_output: >
+    A {summary_type} summary of the financial document(s).
+  agent: financial_summary_expert

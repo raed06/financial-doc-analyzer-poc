@@ -1,0 +1,28 @@
+generate_mcqs:
+  description: >
+    Based on the following financial document(s), create {num_questions} multiple choice questions.
+
+    Document Content:
+    {full_text}
+
+    Requirements:
+    - Generate exactly {num_questions} questions
+    - Difficulty level: {difficulty} ({difficulty_instructions})
+    - Each question should have 4 options (A, B, C, D)
+    - Clearly indicate the correct answer
+    - Questions should test understanding, not just memorization
+    - Avoid ambiguous or trick questions
+
+    Format each question EXACTLY like this:
+    Question 1: [Your question here]
+    A) [Option A]
+    B) [Option B]
+    C) [Option C]
+    D) [Option D]
+    Correct Answer: [A/B/C/D]
+    Explanation: [Brief explanation of why this is correct]
+
+    Generate {num_questions} questions following this exact format.
+  expected_output: >
+    {num_questions} well-formatted multiple choice questions with answers and explanations.
+  agent: mcq_specialist_finance
