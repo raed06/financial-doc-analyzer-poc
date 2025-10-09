@@ -5,7 +5,7 @@ from crewai.tools import tool
 logger = logging.getLogger(__name__)
 
 @tool("MCQ Parser Tool")
-def parse_mcqs_tool(raw_text: str) -> list:
+def mcqs_parser_tool(raw_text: str) -> list:
     """
         Parses multiple-choice question (MCQ) text into a JSON structure.
         Parameters:

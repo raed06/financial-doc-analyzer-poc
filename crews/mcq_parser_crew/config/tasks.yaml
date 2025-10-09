@@ -1,0 +1,17 @@
+parse_mcqs_task:
+  description: >
+    Parse the following raw multiple-choice question text:
+    {raw_text}
+    You should output a JSON list of questions with fields: question, options, correct_answer, explanation.
+    Example:
+      [{
+        'correct_answer': 'A',
+        'explanation': 'The document emphasizes the company\'s focus on "delivering ',
+        'options': {'A': 'Financial performance and profitability',
+                    'B': 'Market share and competitive analysis',
+                    'C': 'Operational efficiency and cost management',
+                    'D': 'Long-term growth strategy for animal care services'},
+        'question': 'What is the main focus of CVS Group plc's strategic report?'
+      }]
+  expected_output: "A JSON list of structured MCQs."
+  agent: mcq_parser_agent

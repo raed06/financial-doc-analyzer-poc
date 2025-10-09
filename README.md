@@ -37,7 +37,8 @@ The application follows a modular architecture with the following components:
    - QA Crew: Answers questions about documents
    - Summary Crew: Generates document summaries
    - MCQ Crew: Creates multiple-choice questions
-   - Keyword Crew: Extracts important keywords
+   - Keyword Crew: Extracts important keywords calling a MPC server
+   - MCQ Parser Crew: Parses and transforms MCQ JSON responses calling a tool
 3. **Document Processing Pipeline**: Handles document loading, chunking, and embedding
 4. **Vector Store**: FAISS-based vector database for document retrieval
 5. **MCP Servers**: Specialized servers for enhanced agent capabilities
@@ -60,7 +61,8 @@ The application follows a modular architecture with the following components:
 │   ├── keyword_crew/       # Keyword extraction crew
 │   ├── mcq_crew/           # Multiple-choice question crew
 │   ├── qa_crew/            # Question answering crew
-│   └── summary_crew/       # Document summarization crew
+│   ├── summary_crew/       # Document summarization crew
+│   └── mcq_parser_crew/    # MCQ parsing crew
 ├── data/                   # Data storage
 │   ├── processed/          # Processed document data
 │   ├── uploads/            # Uploaded documents
@@ -182,6 +184,8 @@ The application can be configured through the `config/settings.py` file, which i
 
 ![monitoring preview](assets/langsmith_monitoring.png)
 
-## 📞 Contact
+## Testing
 
-raul06.orellana@gmail.com
+- Run the tests :
+  ```bash
+    python -m tests.test_mcp_server.py

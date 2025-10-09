@@ -1,15 +1,15 @@
 import logging
+import json
+import re
 from typing import Dict, Any, List
 
 from pydantic import BaseModel
 from crewai.flow.flow import Flow, listen, start
 from crews.mcq_crew.mcq_crew import MCQCrew
+from crews.mcq_parser_crew.mcq_parser_crew import MCQParserCrew
 
 from utils.flow_helpers import handle_exceptions
 from langchain.schema import Document
-
-from tools.mcq_parser_tool import parse_mcqs_tool
-from pprint import pprint
 
 class MCQState(BaseModel):
     documents: List[Document] = []
@@ -85,10 +85,21 @@ class MCQFlow(Flow[MCQState]):
                 "questions": [],
                 "message": "No generated questions to parse."
             }
-        
-        result = parse_mcqs_tool._run(raw_text=self.state.questions_text)
 
-        self.state.questions = result[:self.state.num_questions]
+        result = MCQParserCrew().crew().kickoff(inputs={
+            "raw_text": self.state.questions_text
+        })
+
+        raw = result.raw
+        raw = raw.strip()
+        match = re.search(r"(\[.*\])", raw, flags=re.DOTALL)
+        if match:
+            json_text = match.group(1)
+        else:
+            json_text = raw
+
+        all_questions = json.loads(json_text)
+        self.state.questions = all_questions[:self.state.num_questions]
 
         return {
             "success": True,

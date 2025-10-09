@@ -1,4 +1,4 @@
-from tools.mcq_parser_tool import parse_mcqs_tool
+from tools.mcq_parser_tool import mcqs_parser_tool
 
 def main():
     raw_text = """Here are 5 multiple-choice questions based on the provided financial document, designed to test understanding rather than just memorization:
@@ -55,13 +55,9 @@ D) Increased debt financing for acquisitions and expansion projects.
 
 **Correct Answer:** D) Increased debt financing for acquisitions and expansion projects. 
 **Explanation:**  The document mentions that leverage increased to 1.54x due to the company's investment in acquiring new practices and expanding operations.   
+"""
 
-
-
-
-Let me know if you'd like any further clarification or have more questions!"""
-
-    result = parse_mcqs_tool._run(raw_text=raw_text)
+    result = mcqs_parser_tool._run(raw_text=raw_text)
     print("Result:", result)
     print("Type:", type(result))
 
