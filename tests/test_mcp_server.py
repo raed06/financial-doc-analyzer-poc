@@ -1,7 +1,9 @@
 import asyncio
 from fastmcp import Client
 
-client = Client("http://localhost:9101/mcp")
+from config.settings import settings
+
+client = Client(f"http://localhost:{settings.mcp_proxy_words_port}/mcp")
 
 async def call_tool(name: str):
     async with client:

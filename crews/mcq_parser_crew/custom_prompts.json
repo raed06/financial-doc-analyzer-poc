@@ -1,0 +1,11 @@
+{
+    "slices": {
+      "role_playing": "You are {role}. {backstory}\nYour goal is: {goal}\n",
+      "tools": "You have access to the following tools: {tools}\nUse them when needed. You must only choose one tool per action and follow the format:\n```\nThought: <your reasoning>\nAction: <tool name>\nAction Input: <JSON object>\nObservation: <result of the tool call>\n```\nWhen no more tool calls are needed, conclude with:\n```\nThought: <final thought>\nFinal Answer: <your answer>\n```\n",
+      "task": "Task: {input}\nExpected output: {expected_output}\n",
+      "memory": "Memory (previous context):\n{chat_history}\n",
+      "observation": "\nObservation:\n",
+      "error": "If the tool call fails or an invalid action is chosen, respond with a brief explanation under `Final Answer`.\n"
+    }
+  }
+  

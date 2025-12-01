@@ -1,6 +1,8 @@
 import functools
 import logging
 
+logger = logging.getLogger(__name__)
+
 def handle_exceptions(_func=None, *, default_return=None):
     """
     Decorator to handle exceptions in flow step methods.
